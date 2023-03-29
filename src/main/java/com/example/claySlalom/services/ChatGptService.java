@@ -11,14 +11,15 @@ import org.springframework.web.client.RestTemplate;
 public class ChatGptService {
 
     public JsonNode askQuestion(JsonNode data) throws JsonProcessingException {
-        RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = getHeaders();
-        //create body
         String payload = createPayload(data.get("message").toString());
-        // Create HttpEntity object with headers
-        HttpEntity<String> requestEntity = new HttpEntity<String>(payload, headers);
+        return fetchChatGpt(payload, headers);
 
-        // Call the POST api endpoint
+    }
+
+    private JsonNode fetchChatGpt(String payload, HttpHeaders headers) throws JsonProcessingException {
+        RestTemplate restTemplate = new RestTemplate();
+        HttpEntity<String> requestEntity = new HttpEntity<String>(payload, headers);
         String apiUrl = "https://api.openai.com/v1/chat/completions";
         String response = restTemplate.postForObject(apiUrl, requestEntity, String.class);
         ObjectMapper mapper = new ObjectMapper();
@@ -29,12 +30,11 @@ public class ChatGptService {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         String authToken = System.getenv("AUTH_TOKEN");
-        System.out.println(authToken);
         headers.add("Authorization", "Bearer " + authToken);
 
         return headers;
     }
-
+    // TODO: Fix this by turning it into a Map and then stringify
     private String createPayload(String data) {
         return "{" +
                 "\"model\": \"gpt-4\"," +
