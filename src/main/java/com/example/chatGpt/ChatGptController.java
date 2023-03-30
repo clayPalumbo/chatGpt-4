@@ -1,5 +1,5 @@
-package com.example.claySlalom;
-import com.example.claySlalom.services.ChatGptService;
+package com.example.chatGpt;
+import com.example.chatGpt.services.ChatGptService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.http.*;

@@ -1,10 +1,10 @@
-package com.example.claySlalom;
+package com.example.chatGpt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ClaySlalomApplicationTests {
+class MainApplicationTests {
 
 	@Test
 	void contextLoads() {

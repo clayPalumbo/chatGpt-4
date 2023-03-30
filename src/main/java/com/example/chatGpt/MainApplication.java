@@ -1,6 +1,4 @@
-package com.example.claySlalom;
-
-import java.util.Arrays;
+package com.example.chatGpt;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -9,10 +7,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class ClaySlalomApplication {
+public class MainApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ClaySlalomApplication.class, args);
+		SpringApplication.run(MainApplication.class, args);
 	}
 
 	@Bean

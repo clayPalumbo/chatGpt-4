@@ -1,4 +1,4 @@
-package com.example.claySlalom.services;
+package com.example.chatGpt.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -34,7 +34,7 @@ public class ChatGptService {
 
         return headers;
     }
-    // TODO: Fix this by turning it into a Map and then stringify
+    // TODO: Fix this by potentially turning it into a Map and then stringify
     private String createPayload(String data) {
         return "{" +
                 "\"model\": \"gpt-4\"," +
